@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommender</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="animate__animated animate__fadeInDown">Movie Recommender</h1>
+            <p class="subtitle animate__animated animate__fadeIn">Find movies similar to your favorites</p>
+        </header>
+        
+        <div class="search-container animate__animated animate__fadeInUp">
+            <input type="text" id="movie-input" placeholder="Enter a movie title...">
+            <button id="search-btn"><i class="fas fa-search"></i> Find Movies</button>
+        </div>
+        
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Finding recommendations...</p>
+        </div>
+        
+        <div class="error-container" id="error-container">
+            <p id="error-message"></p>
+        </div>
+        
+        <div class="selected-movie" id="selected-movie">
+            <h2>You selected:</h2>
+            <div class="movie-card">
+                <h3 id="selected-title"></h3>
+                <p id="selected-overview"></p>
+            </div>
+        </div>
+        
+        <div class="results-container" id="results-container">
+            <h2>Recommended Movies:</h2>
+            <div class="movie-grid" id="recommendations-list"></div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>Movie Recommender System | Built with ML and Flask</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
